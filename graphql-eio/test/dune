@@ -1,0 +1,11 @@
+(executable
+ (libraries graphql-eio alcotest eio_main yojson)
+ (name eio_test))
+
+(alias
+ (name runtest)
+ (package graphql-eio)
+ (deps
+  (:test eio_test.exe))
+ (action
+  (run %{test})))
